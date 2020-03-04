@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
+import Game from './components/Game'
 import './App.css';
 import { Button } from 'semantic-ui-react';
 
@@ -13,7 +14,7 @@ class App extends React.Component {
         <header>
           <nav>
           <div className='title'>
-          <h1>Enter The Ocean Game</h1>
+          <h1>The Ocean Game</h1>
         </div>
               <Button ><NavLink className='navLink' to='/register'>New Player?</NavLink></Button>
               <Button > <NavLink className='navLink' to='/login'>Existing Player</NavLink></Button>
@@ -25,6 +26,7 @@ class App extends React.Component {
         <div>
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
+          <Route path='/game' component={Game} />
         </div>
       </div>
     );
