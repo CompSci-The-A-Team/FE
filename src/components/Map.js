@@ -994,7 +994,7 @@ const Map = (props) => {
     const mapRef = useRef(null);
 
     const handleReload = useCallback(() => {
-        //setCurNode to find room and room id via worldMap.room data
+        //setCurNode to find room and room id via worldData room data
         //const visited = []
         // const nodes = filter rooms if visited -- include it in map
         // const adjacent - new Set() ????

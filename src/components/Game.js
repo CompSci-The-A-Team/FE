@@ -23,7 +23,7 @@ const Game = (props) => {
         axiosWithAuth()
             .get('https://lambda-mud-test.herokuapp.com/api/adv/init/')
             .then(res => {
-                console.log('init', res)
+                console.log('GET init', res)
                 setUserData({ name: res.data.name})
                 setGameData(res.data)
                
@@ -33,10 +33,11 @@ const Game = (props) => {
 
             })
         axiosWithAuth()
+            // set map data
             .get('https://lambda-mud-test.herokuapp.com/api/adv/rooms/')
             .then(res => {
-                console.log('rooms', res)
-                setMapData(res.data.map)
+                console.log('GET rooms for map', res)
+                setMapData(res.data.rooms)
             })
             .catch(err=> {
                 console.log(err)
@@ -50,9 +51,9 @@ const Game = (props) => {
             // set room data on response
             // maybe set map data
         axiosWithAuth()
-            .post('https://lambda-mud-test.herokuapp.com/api/adv/move/')
+            .post('https://lambda-mud-test.herokuapp.com/api/adv/move/', {direction})
             .then(res => {
-                console.log('post res', res)
+                console.log('POST res', res)
                 setGameData(res.data)
 
             })

@@ -13,7 +13,7 @@ const RightSide = (props) => {
     return (
         <div>
             <Controls move={props.move} />
-            <GameData gameData={props.GameData} userData={props.GameData} />
+            <GameData gameData={props.gameData} userData={props.userData} />
             {/* <Logout /> */}
 
         </div>

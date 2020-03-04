@@ -7,10 +7,30 @@ const Controls = (props) => {
 
     return (
         <div>
-            <button>N</button>
-            <button>E</button>
-            <button>S</button>
-            <button>W</button>
+            <button
+                className='direction-button'
+                onClick={e => props.move(e, 'n')}
+            > 
+            N
+            </button>
+            <button
+                className='direction-button'
+                onClick={e => props.move(e, 'e')}
+            >
+            E
+            </button>
+            <button
+                className='direction-button'
+                onClick={e => props.move(e, 's')}
+            >
+            S
+            </button>
+            <button
+                className='direction-button'
+                onClick={e => props.move(e, 'w')}
+            >
+            W
+            </button>
             {/* display buttons and pass down or handle onClick event listeners in this component */}
 
         </div>
