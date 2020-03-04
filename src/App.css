@@ -1,4 +1,78 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  position: fixed;
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.Landing h1 {
+  font-size: 3.7em;
+  color: white;
+}
+.Landing {
+  padding-top: 5%;
+  text-align: center;
+}
+.background-image {
+  background-image: url("./images/ocean.jpg");
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 
+.startButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 25%;
+}
+.navLink {
+  background-color: lightslategrey; 
+  color: white;
+  padding: 20px 70px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+}
+.button {
+  background-color: lightslategrey;
+  color: white;
+
+  border-radius: 5px;
+}
+.WelcomeScreen {
+  background-color: lightslategrey; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.WelcomeText {
+  width: 40%;
+  padding: 1% 4% 2% 4%;
+  background-color:rgba(255, 255, 255, 0.8);
+color: lightslategray
+;
+  display: block;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+.WelcomeButton {
+  margin-top: 4%;
+  background-color:white; 
+  color: lightslategrey;
+  padding: 15px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border: 2px solid lightslategray;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Form, Button } from 'semantic-ui-react';
 
+
 class Login extends React.Component {
 	state = {
 		username: '',
@@ -16,13 +17,13 @@ class Login extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault()
-		const endpoint = 'https://lambda-mud-test.herokuapp.com/api/login/';
+		const endpoint = 'http://the-a-team1.herokuapp.com/api/login/';
 		console.log("login is working")
 	 	axios
 		.post(endpoint, this.state)
 		.then(response => {
  			localStorage.setItem('key', response.key)
-	// 			this.props.history.push('/game')
+			// this.props.history.push('/WelcomeScreen') This will link to game
 		})
 			.catch(error => console.log(error));
 	 };
@@ -50,7 +51,7 @@ class Login extends React.Component {
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-						<Button className='bigButton' type='submit'> Log-in
+						<Button className='bigButton' type='submit'> Login
 					</Button>
 					</Form>
 				</div>

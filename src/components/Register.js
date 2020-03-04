@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Form, Button } from 'semantic-ui-react';
 
+
 class Register extends React.Component {
   state = {
     username: '',
@@ -17,13 +18,14 @@ class Register extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const endpoint = 'https://lambda-mud-test.herokuapp.com/api/registration/';
+    const endpoint = 'https://the-a-team1.herokuapp.com/api/registration/';
     console.log("register is running!")
     axios
       .post(endpoint, this.state)
       .then(response => {
           console.log(response)
         localStorage.setItem('key', response.key)
+        this.props.history.push('/welcome')
       })
       .catch(error => console.log(error));
   };
@@ -65,7 +67,9 @@ class Register extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Field>
-            <Button type='submit'>Login</Button>
+            <Button type='submit'> 
+            Login
+       </Button>
           </Form>
       </div>
     )
