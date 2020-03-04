@@ -1,4 +1,41 @@
 .App {
   text-align: center;
+  padding-top: 5%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.title {
+  font-size: 2.5em;
+  color: white;
 }
 
+.background-image {
+  background-image: url("./images/ocean.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: 0;
+}
+
+.startButtons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 30%;
+}
+.navLink {
+  background-color:grey; /* Green */
+  
+  color: white;
+  padding: 20px 67px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.button {
+  background-color:grey;
+  color: white;
+
+  border-radius: 5px;
+  
+}
