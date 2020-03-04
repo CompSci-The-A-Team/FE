@@ -1047,7 +1047,7 @@ const Map = (props) => {
                   ...node,
                   x: node.x * (coords.width / 20) + 0.5 * coords.width,
                   y: node.y * -(coords.width / 20) + 0.5 * coords.height,
-                  size: coords.width ,
+                  size: coords.width / 2,
                   color: "#2E4053 ",
                   symbolType: "square",
                   id: node.id
@@ -1078,7 +1078,7 @@ const Map = (props) => {
                 />
 
             <h2>
-                {/* display the possible exits of this room in spans */}
+                
             </h2>
             </div>
             ) : (

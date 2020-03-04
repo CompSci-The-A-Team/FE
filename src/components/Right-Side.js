@@ -11,7 +11,7 @@ import GameData from "./GameData";
 const RightSide = (props) => {
     console.log('props in Right Side', props)
     return (
-        <div>
+        <div className='game-info-container'>
             <Controls move={props.move} />
             <GameData gameData={props.gameData} userData={props.userData} />
             {/* <Logout /> */}
