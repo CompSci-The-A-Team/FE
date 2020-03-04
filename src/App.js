@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import Login from './components/Login';
@@ -5,32 +6,29 @@ import Register from './components/Register';
 import Game from './components/Game'
 import './App.css';
 import { Button } from 'semantic-ui-react';
+import { BrowserRouter as Router,  Route, withRouter } from "react-router-dom";
+import WelcomeScreen from "./components/WelcomeScreen"
+import LandingPage from "./components/LandingPage"
+
+
 
 class App extends React.Component {
-
   render() {
     return (
-      <div className="App">
-        <header>
-          <nav>
-          <div className='title'>
-          <h1>The Ocean Game</h1>
+      
+      <Router>
+        <div className="App">
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/welcome" component={WelcomeScreen} />
+        <Route exact path="/" component={LandingPage} />
+      <Route path='/game' component={Game} />
+
         </div>
-              {/* <Button ><NavLink className='navLink' to='/register'>New Player?</NavLink></Button>
-              <Button > <NavLink className='navLink' to='/login'>Existing Player</NavLink></Button> */}
-          </nav>
-        </header>
-
-
-
-        <div>
-          <Route path='/register' component={Register} />
-          <Route path='/login' component={Login} />
-          <Route path='/game' component={Game} />
-        </div>
-      </div>
+      </Router>
     );
   }
 }
 
 export default withRouter(App);
+
