@@ -1,0 +1,1 @@
+// Loading component for map and or if we add input commands
