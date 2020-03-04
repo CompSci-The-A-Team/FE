@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
           <p>The story of the game here</p>
 <h1>How to Play</h1>
 <p>The directions of the game here</p>
-<Button> Let's Play</Button>
+<Button className="WelcomeButton" > Let's Play</Button>
       </div>
     )
 }

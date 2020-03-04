@@ -11,7 +11,7 @@ class LandingPage extends React.Component {
           <div className="startButtons">
             <Button>
               <NavLink className="navLink" to="/register">
-                New Player?
+                New Player
               </NavLink>
             </Button>
             <Button>
