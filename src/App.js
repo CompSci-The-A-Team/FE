@@ -16,8 +16,8 @@ class App extends React.Component {
           <div className='title'>
           <h1>The Ocean Game</h1>
         </div>
-              <Button ><NavLink className='navLink' to='/register'>New Player?</NavLink></Button>
-              <Button > <NavLink className='navLink' to='/login'>Existing Player</NavLink></Button>
+              {/* <Button ><NavLink className='navLink' to='/register'>New Player?</NavLink></Button>
+              <Button > <NavLink className='navLink' to='/login'>Existing Player</NavLink></Button> */}
           </nav>
         </header>
 

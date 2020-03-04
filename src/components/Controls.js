@@ -2,11 +2,15 @@
 
 import React from "react";
 
-const Controls = () => {
+const Controls = (props) => {
+    console.log('props in Controls', props)
 
     return (
         <div>
-
+            <button>N</button>
+            <button>E</button>
+            <button>S</button>
+            <button>W</button>
             {/* display buttons and pass down or handle onClick event listeners in this component */}
 
         </div>
