@@ -81,12 +81,13 @@ svg[style] {
 .button {
   background-color: lightslategrey;
   color: white;
-
+}
 
 .game-info-container {
   width: 40%;
   border-radius: 5px;
 }
+
 .WelcomeScreen {
   background-color: lightslategrey; 
   position: fixed;
