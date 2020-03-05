@@ -22,7 +22,7 @@ class Login extends React.Component {
 	 	axios
 		.post(endpoint, this.state)
 		.then(response => {
- 			localStorage.setItem('key', response.key)
+ 			localStorage.setItem('key', response.data.key)
 			// this.props.history.push('/WelcomeScreen') This will link to game
 		})
 			.catch(error => console.log(error));
