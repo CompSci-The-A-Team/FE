@@ -23,7 +23,7 @@ class Login extends React.Component {
 		.post(endpoint, this.state)
 		.then(response => {
  			localStorage.setItem('key', response.data.key)
-			// this.props.history.push('/WelcomeScreen') This will link to game
+			this.props.history.push('/game') 
 		})
 			.catch(error => console.log(error));
 	 };

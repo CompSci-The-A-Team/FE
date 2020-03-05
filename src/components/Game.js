@@ -32,7 +32,7 @@ const Game = (props) => {
                 console.log(err)
 
             })
-            axiosWithAuth()
+        axiosWithAuth()
             // set map data
             .get('https://the-a-team1.herokuapp.com/api/adv/rooms')
             .then(res => {
@@ -50,7 +50,7 @@ const Game = (props) => {
         //axios POST to adventure move endpoint
             // set room data on response
             // maybe set map data
-            axiosWithAuth()
+        axiosWithAuth()
             .post('https://the-a-team1.herokuapp.com/api/adv/move/', {direction})
             .then(res => {
                 console.log('POST res', res)
