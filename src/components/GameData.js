@@ -4,7 +4,7 @@ const GameData = (props) => {
     console.log('props in gameData', props)
     console.log('player username in gameData', props.gameData.players)
     return (
-        <div className='game-data-container'>
+        <div className='room-info-container'>
             <h2 style={{color: "red"}} className='welcome-user'>Welcome {props.userData.name}</h2>
             <h4 style={{color: "red"}}>You are currently in room: {props.gameData.title}</h4>
             <h4 style={{color: "red"}}>Room Description: {props.gameData.description}</h4>
