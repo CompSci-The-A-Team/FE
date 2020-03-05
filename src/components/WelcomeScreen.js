@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
+import {  Link } from 'react-router-dom';
 
 const WelcomeScreen = () => {
   return (
@@ -15,7 +16,7 @@ const WelcomeScreen = () => {
       &nbsp;
       <h4>You are now ready to begin your Journey. Good Luck </h4>
       &nbsp;
-      <Button className="WelcomeButton"> Let's Play</Button>
+      <Button className="WelcomeButton"> <Link to='/game'> Let's Play </Link></Button>
       </div>
     </div>
   );
