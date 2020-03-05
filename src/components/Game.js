@@ -21,7 +21,7 @@ const Game = (props) => {
             // set room data
             // set map data
         axiosWithAuth()
-            .get('https://lambda-mud-test.herokuapp.com/api/adv/init/')
+            .get('https://the-a-team1.herokuapp.com/api/adv/init')
             .then(res => {
                 console.log('GET init', res)
                 setUserData({ name: res.data.name})
@@ -32,9 +32,9 @@ const Game = (props) => {
                 console.log(err)
 
             })
-        axiosWithAuth()
+            axiosWithAuth()
             // set map data
-            .get('https://lambda-mud-test.herokuapp.com/api/adv/rooms/')
+            .get('https://the-a-team1.herokuapp.com/api/adv/rooms')
             .then(res => {
                 console.log('GET rooms for map', res)
                 setMapData(res.data.rooms)
@@ -50,8 +50,8 @@ const Game = (props) => {
         //axios POST to adventure move endpoint
             // set room data on response
             // maybe set map data
-        axiosWithAuth()
-            .post('https://lambda-mud-test.herokuapp.com/api/adv/move/', {direction})
+            axiosWithAuth()
+            .post('https://the-a-team1.herokuapp.com/api/adv/move/', {direction})
             .then(res => {
                 console.log('POST res', res)
                 setGameData(res.data)
@@ -62,7 +62,7 @@ const Game = (props) => {
 
     return(
         <div className='game-container'>
-
+            {/* <h1>Welcome to the Ocean Game!</h1> */}
             <Map mapData={mapData} />
             
             <RightSide 

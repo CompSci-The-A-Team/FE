@@ -1,12 +1,10 @@
 
 import React from 'react';
-import { Route, NavLink, withRouter } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Game from './components/Game'
 import './App.css';
-import { Button } from 'semantic-ui-react';
-import { BrowserRouter as Router,  Route, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, withRouter, Route} from "react-router-dom";
 import WelcomeScreen from "./components/WelcomeScreen"
 import LandingPage from "./components/LandingPage"
 
