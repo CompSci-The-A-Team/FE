@@ -1065,7 +1065,7 @@ const Map = (props) => {
     return(
         <div className='map-container' ref={mapRef}>
             {graph.nodes && rectCoords.height !== 0 ? (
-                <div className='graph-container'>
+                <div className='inner-graph-container'>
                 <Graph
                     className="graph"
                     id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error

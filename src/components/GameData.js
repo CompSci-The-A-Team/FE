@@ -4,15 +4,13 @@ const GameData = (props) => {
     console.log('props in gameData', props)
     console.log('player username in gameData', props.gameData.players)
     return (
-        <div>
-            <h2 style={{color: "red"}}>Welcome {props.userData.name}</h2>
-            <h3>There is a Fish in this room: his message says to find the twilight zone north</h3>
-            <h4>1 x Magic Shell</h4>
-            
-
+        <div className='game-data-container'>
+            <h2 style={{color: "red"}} className='welcome-user'>Welcome {props.userData.name}</h2>
             <h4 style={{color: "red"}}>You are currently in room: {props.gameData.title}</h4>
             <h4 style={{color: "red"}}>Room Description: {props.gameData.description}</h4>
-
+            <h4>There is a Fish in this room: his message says to find the twilight zone north</h4>
+            <h3>Items in this room:</h3>
+            <h4>1 x Magic Shell</h4>
             {/* <h4>Players in this room: </h4> */}
             {/* <p>{props.gameData.players[1]}</p> */}
             {props.gameData.players && (

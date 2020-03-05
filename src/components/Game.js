@@ -14,6 +14,7 @@ const Game = (props) => {
     const [ userData, setUserData ] = useState({}) // just player name for now
     const [ mapData, setMapData ] = useState({})
     const [ gameData, setGameData ] = useState({})
+    const [ isLoading, setIsLoading ] = useState(false)
 
     useEffect(() => {
         //axios GET adventure init endpoint
@@ -26,7 +27,7 @@ const Game = (props) => {
                 console.log('GET init', res)
                 setUserData({ name: res.data.name})
                 setGameData(res.data)
-               
+                setIsLoading(false);
             })
             .catch(err=> {
                 console.log(err)
@@ -38,6 +39,7 @@ const Game = (props) => {
             .then(res => {
                 console.log('GET rooms for map', res)
                 setMapData(res.data.rooms)
+                setIsLoading(false);
             })
             .catch(err=> {
                 console.log(err)
@@ -60,21 +62,36 @@ const Game = (props) => {
             .catch(err => console.log(err))
     }
 
+
+   
+
     return(
         <div className='game-container'>
-            {/* <h1>Welcome to the Ocean Game!</h1> */}
-            <Map mapData={mapData} />
+            {isLoading ? (
+                <p>loading your game...</p>
+            ) : (
+                <div className='inner-game-container'>
+                    <div>
+                        <h1 className='game-header'>The Ocean Game</h1>
+                    </div>
+               <div className='inner-map-and-data-container'>
+                <Map mapData={mapData} />
             
-            <RightSide 
-                move={move}
-                gameData={gameData}
-                setGameData={setGameData}
-                userData= {userData}
-                // Logout?
-            /> 
+                <RightSide 
+                    move={move}
+                    gameData={gameData}
+                    setGameData={setGameData}
+                    userData= {userData}
+                    
+                /> 
+                </div>
+                </div>
+                )} 
+            </div>
+            )
+        }
            
-        </div>
-    )
-}
+
+
 
 export default Game;

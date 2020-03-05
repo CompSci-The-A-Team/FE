@@ -6,7 +6,9 @@ const Controls = (props) => {
     console.log('props in Controls', props)
 
     return (
-        <div>
+        <div className='controls-container'>
+            <h3 className='controls-header'>Controls</h3>
+            <div className='control-buttons-container'>
             <button
                 className='direction-button'
                 onClick={e => props.move(e, 'n')}
@@ -32,7 +34,9 @@ const Controls = (props) => {
             W
             </button>
             {/* display buttons and pass down or handle onClick event listeners in this component */}
+            </div>
 
+     
         </div>
     )
 }
