@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+
 axios.defaults.baseURL = 'http://the-a-team1.herokuapp.com/api/';
+
 
 axios.interceptors.request.use(
   function (options) {
