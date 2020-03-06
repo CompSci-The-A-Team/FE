@@ -250,6 +250,8 @@ svg[style] {
   border-radius: 1.5rem;
   box-shadow: 2px 3px 20px 0px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
+  height: 550px;
+  width: 500px;
   /* text-align: center;
   background-color: #5DADE2;
   border-radius: 1.5rem;
