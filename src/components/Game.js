@@ -43,6 +43,7 @@ const Game = (props) => {
             .get('https://the-a-team1.herokuapp.com/api/adv/rooms')
             .then(res => {
                 console.log('GET rooms for map', res)
+                // console.log('GET res.data.rooms for map', res.data.rooms)
                 setMapData(res.data.rooms)
                 setIsLoading(false);
             })

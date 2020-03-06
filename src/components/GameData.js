@@ -13,13 +13,13 @@ const GameData = (props) => {
             <h4>1 x Magic Shell</h4>
             {/* <h4>Players in this room: </h4> */}
             {/* <p>{props.gameData.players[1]}</p> */}
-            {props.gameData.players && (
+            {/* {props.gameData.players && (
                 <div>
                 <h3>Players in room: </h3>
                 <p style={{color: "red"}}>{props.gameData.players[0]}</p>
                 <p style={{color: "red"}}>{props.gameData.players[1]}</p>
                 </div>
-            )}
+            )} */}
         </div>
     )
 }

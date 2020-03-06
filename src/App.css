@@ -214,8 +214,10 @@ svg[style] {
 
 .room-info-container {
   margin: 2%;
+  position: inherit;
 }
 .controls-container {
+  position: inherit;
   width: 60%;
   height: 40%;
   margin: auto;

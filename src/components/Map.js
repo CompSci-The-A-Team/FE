@@ -983,49 +983,43 @@ const testNodes = [
       }
 ]
 
-const Map = ({ mapData, gameData}) => {
-    console.log('props in Map', typeof mapData, typeof gameData)
+const Map = (props) => {
+    console.log('props in Map', props)
     // console.log('propsmapdata', props.mapData.room)
 
     const [ graph, setGraph ] = useState({});
-    const [ curNode, setCurNode ] = useState({});
+    // const [ curNode, setCurNode ] = useState({});
     const [rectCoords, setRectCoords] = useState({
         height: 0,
         width: 0
       });
     const mapRef = useRef(null);
 
-    const handleReload = useCallback(() => {
-        // setCurNode(props.mapData.find(room => room.id))
-        //const visited = []
-        // const nodes = filter rooms if visited -- include it in map
-        // const adjacent - new Set() ????
-        // for each node -- set new Set directions (greyed links)
-
-        // const coords = mapRef.current -- RESEARCH VIEWPORT
-
-        // const adjacentNodes - filter rooms for adjacent rooms
-        // const newGraph
-
-    })
-
-    // a node has an ID, an east, south, x, y, 
-
     useEffect(() => {
-        // setCurNode(mapData.find(room => room.id === gameData.room_id))
+
+      if(props.mapData.length > 0) {
+       let room = props.mapData.find(room => {
+          console.log('room.id', room.id)
+          console.log('gameData.room_id', props.gameData.room_id)
+          return room.id === props.gameData.room_id
+        })
+        console.log('setCurrNode', room)
+      
+        
         // const visited = []
-        // const nodes = mapData.id
+        const nodes = props.mapData
         // console.log('nodes', mapData.id)
 
 
         const coords = mapRef.current.getBoundingClientRect();
         coords.height *= 0.81;
+        // coords.width *= 0.71;
         setRectCoords({
           height: coords.height,
           width: coords.width
         });
 
-        const s_links = testNodes.filter(node => {
+        const s_links = nodes.filter(node => {
             if(node.south) {
                 return true
             } else {
@@ -1036,7 +1030,7 @@ const Map = ({ mapData, gameData}) => {
             target: link.south
         }))
 
-        const e_links = testNodes.filter(node => {
+        const e_links = nodes.filter(node => {
             if(node.east) {
                 return true
             } else {
@@ -1047,44 +1041,45 @@ const Map = ({ mapData, gameData}) => {
             target: link.east
         }))
 
-        const testGraph = {
-            nodes: [
-              ...testNodes.map(node => {
-                return {
-                  ...node,
-                  x: node.x * (coords.width / 20) + 0.5 * coords.width,
-                  y: node.y * -(coords.width / 20) + 0.5 * coords.height,
-                  size: coords.width / 2,
-                  color: "#2E4053 ",
-                  symbolType: "square",
-                  id: node.id
-              }})
-            ],
-            links: [...s_links, ...e_links]
-          };
+        // const testGraph = {
+        //     nodes: [
+        //       ...testNodes.map(node => {
+        //         return {
+        //           ...node,
+        //           x: node.x * (coords.width / 20) + 0.5 * coords.width,
+        //           y: node.y * -(coords.width / 20) + 0.5 * coords.height,
+        //           size: coords.width / 2,
+        //           color: "#2E4053 ",
+        //           symbolType: "square",
+        //           id: node.id
+        //       }})
+        //     ],
+        //     links: [...s_links, ...e_links]
+        //   };
 
-        // const newGraph = {
-        //   nodes: [
-        //     ...nodes.map(node => {
-        //       return {
-        //         ...node,
-        //         x: node.x * (coords.width /20) + 0.5 * coords.width,
-        //         y: node.y * -(coords.width / 20) + 0.5 * coords.height,
-        //         size: coords.width / 2,
-        //         color: "#2E4053 ",
-        //         symbolType: "square",
-        //         id: node.id
-        //       }
-        //     })
-        //   ],
-        //   links: [...s_links, ...e_links]
-        // }
-
-          setGraph(testGraph);
-        // handleReload();
-        // window.addEventListener("resize", handleRefresh);
-        // return () => window.removeEventListener("resize", handleRefresh);
-    }, [])
+        const newGraph = {
+          nodes: [
+            ...nodes.map(node => {
+              return {
+                ...node,
+                x: node.x * (coords.width / 20) + 0.5 * coords.width,
+                y: node.y * -(coords.width / 20) + 0.5 * coords.height,
+                color: node.id === props.gameData.room_id ? "#F7DC6F" : "#2E4053",
+                symbolType: node.id === props.gameData.room_id ? "circle" : "square",
+                size: coords.width / 2,
+                // color: "#2E4053 ",
+                // symbolType: "square",
+                id: node.id
+              }
+            })
+          ],
+          links: [...s_links, ...e_links]
+        }
+      
+          setGraph(newGraph);
+        }
+  
+    }, [props.mapData])
 
     return(
         <div className='map-container' ref={mapRef}>
