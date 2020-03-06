@@ -31,6 +31,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<div className='Container'>
+				<h2 style={{color: '#002a50'}}>Login In</h2>
 				<div className='form'>
 					<Form onSubmit={this.handleSubmit}>
 						<Form.Input

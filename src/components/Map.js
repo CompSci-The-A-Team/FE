@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Graph } from "react-d3-graph";
+import { map } from 'd3';
 
 const myConfig = {
     automaticRearrangeAfterDropNode: true,
@@ -982,8 +983,9 @@ const testNodes = [
       }
 ]
 
-const Map = (props) => {
-    console.log('props in Map', props)
+const Map = ({ mapData, gameData}) => {
+    console.log('props in Map', typeof mapData, typeof gameData)
+    // console.log('propsmapdata', props.mapData.room)
 
     const [ graph, setGraph ] = useState({});
     const [ curNode, setCurNode ] = useState({});
@@ -994,7 +996,7 @@ const Map = (props) => {
     const mapRef = useRef(null);
 
     const handleReload = useCallback(() => {
-        //setCurNode to find room and room id via worldData room data
+        // setCurNode(props.mapData.find(room => room.id))
         //const visited = []
         // const nodes = filter rooms if visited -- include it in map
         // const adjacent - new Set() ????
@@ -1010,6 +1012,11 @@ const Map = (props) => {
     // a node has an ID, an east, south, x, y, 
 
     useEffect(() => {
+        // setCurNode(mapData.find(room => room.id === gameData.room_id))
+        // const visited = []
+        // const nodes = mapData.id
+        // console.log('nodes', mapData.id)
+
 
         const coords = mapRef.current.getBoundingClientRect();
         coords.height *= 0.81;
@@ -1055,6 +1062,23 @@ const Map = (props) => {
             ],
             links: [...s_links, ...e_links]
           };
+
+        // const newGraph = {
+        //   nodes: [
+        //     ...nodes.map(node => {
+        //       return {
+        //         ...node,
+        //         x: node.x * (coords.width /20) + 0.5 * coords.width,
+        //         y: node.y * -(coords.width / 20) + 0.5 * coords.height,
+        //         size: coords.width / 2,
+        //         color: "#2E4053 ",
+        //         symbolType: "square",
+        //         id: node.id
+        //       }
+        //     })
+        //   ],
+        //   links: [...s_links, ...e_links]
+        // }
 
           setGraph(testGraph);
         // handleReload();

@@ -28,11 +28,16 @@ const Game = (props) => {
                 setUserData({ name: res.data.name})
                 setGameData(res.data)
                 setIsLoading(false);
+                await_init()
+
             })
+            
             .catch(err=> {
                 console.log(err)
 
             })
+
+    const await_init = () => {
         axiosWithAuth()
             // set map data
             .get('https://the-a-team1.herokuapp.com/api/adv/rooms')
@@ -45,6 +50,8 @@ const Game = (props) => {
                 console.log(err)
 
             })
+    }
+        
     }, [])
 
     const move = (e, direction) => {
@@ -75,7 +82,7 @@ const Game = (props) => {
                         <h1 className='game-header'>The Ocean Game</h1>
                     </div>
                <div className='inner-map-and-data-container'>
-                <Map mapData={mapData} />
+                <Map mapData={mapData} gameData={gameData}/>
             
                 <RightSide 
                     move={move}

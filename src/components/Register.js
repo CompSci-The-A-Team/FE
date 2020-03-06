@@ -33,6 +33,7 @@ class Register extends React.Component {
   render() {
     return (
       <div className='Container'>
+        <h2 style={{color: '#002a50'}}>Create Account</h2>
           <Form onSubmit={this.handleSubmit}>
             <Form.Field>
               <Form.Input

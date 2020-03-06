@@ -9,6 +9,58 @@
 
 }
 
+.Container {
+  /* border: 1px solid red; */
+  background-color: #a2d1f0;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 1.5rem;
+  box-shadow: inset 3px 9px 25px -1px #3329a2;
+  border: 5px inset rgba(24, 62, 220, 0.85);
+}
+
+.ui form {
+  margin-top: inherit;
+}
+
+.ui input {
+     font-size: 15px;
+     padding: 10px 10px 10px 40px;
+     background-image: linear-gradient(135deg,#00065e 20%,#6f80edd6);
+     color: #fff;
+     outline: none;
+     border: none;
+     border-radius: 8px;
+     border-bottom: 2px solid #74bcff;
+     /* width: 100%; */
+     box-sizing: border-box;
+     margin: 1vh auto
+}
+
+label{
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #002a50;
+  margin: 3vh auto 1.5vh;
+}
+
+.ui button {
+  margin: 2vh auto;
+  background-color: #002c8b;
+  color: #74bcff;
+  border: 2px solid #74bcff;
+  box-shadow: 2px 2px 5px 0 rgba(0,0,0,.5);
+  font-weight: 700;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 .Landing h1 {
   font-size: 3.7em;
   color: white;
@@ -29,11 +81,14 @@
 
 .startButtons {
   display: flex;
-  justify-content: space-between;
-  padding: 0% 23%;
+  justify-content: space-evenly;
+  /* padding: 0% 23%; */
+  width: 80%;
+  margin: auto;
+  margin-top: 7%;
 }
 .navLink {
-  background-color: lightslategrey; 
+  background-color: #26496c; 
   color: white;
   padding: 20px 70px;
   text-align: center;
@@ -42,9 +97,10 @@
   font-size: 25px;
 }
 .startButtons .button {
-  background-color: lightslategrey;
+  background-color: #26496c;
   color: white;
   border-radius: 5px;
+  width: 40%
 }
 
 .game-info-container {
@@ -53,7 +109,7 @@
 }
 
 .WelcomeScreen {
-  background-color: lightslategrey; 
+  background-color: #002a50; 
   position: fixed;
   top: 0;
   width: 100%;
@@ -65,8 +121,7 @@
   width: 40%;
   padding: 1% 4% 2% 4%;
   background-color:rgba(255, 255, 255, 0.8);
-color: lightslategray
-;
+  color: #002a50;
   display: block;
   margin-top: 60px;
   margin-left: auto;
@@ -85,6 +140,12 @@ color: lightslategray
   font-size: 20px;
   border: 2px solid lightslategray;
 
+}
+
+a {
+  text-decoration: none;
+  color: #002a50;
+  font-weight: bold;
 }
 
 
@@ -134,7 +195,7 @@ svg[style] {
   /* border: 1px solid black; */
   background-color: #5DADE2;
   border-radius: 1.5rem;
-  box-shadow: inset 3px 9px 25px -1px #3329a2;
+  box-shadow: outset 3px 9px 25px -1px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
 }
 
@@ -142,8 +203,13 @@ svg[style] {
   text-align: center;
   background-color: #5DADE2;
   border-radius: 1.5rem;
-  box-shadow: inset 3px 9px 25px -1px #3329a2;
+  box-shadow: 2px 3px 20px 0px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
+  /* text-align: center;
+  background-color: #5DADE2;
+  border-radius: 1.5rem;
+  box-shadow: inset 3px 9px 25px -1px #3329a2;
+  border: 5px inset rgba(24, 62, 220, 0.85); */
 }
 
 .room-info-container {
@@ -155,7 +221,7 @@ svg[style] {
   margin: auto;
   background-color: #5DADE2;
   border-radius: 1.5rem;
-  box-shadow: inset 3px 9px 25px -1px #3329a2;
+  box-shadow: outset 3px 9px 25px -1px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
 }
 
