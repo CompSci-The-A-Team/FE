@@ -200,6 +200,8 @@ svg[style] {
 }
 
 .game-data-container {
+  height: 550px;
+  width: 500px;
   text-align: center;
   background-color: #5DADE2;
   border-radius: 1.5rem;
