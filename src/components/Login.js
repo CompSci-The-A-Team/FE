@@ -17,7 +17,7 @@ class Login extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault()
-		const endpoint = 'http://the-a-team1.herokuapp.com/api/login/';
+		const endpoint = 'https://the-a-team1.herokuapp.com/api/login/';
 		console.log("login is working")
 	 	axios
 		.post(endpoint, this.state)
@@ -30,13 +30,16 @@ class Login extends React.Component {
 
 	render() {
 		return (
+
 			<div className='Container'>
 				<h2 style={{color: '#002a50'}}>Login In</h2>
+
 				<div className='form'>
+				<h1>Sign In</h1>
 					<Form onSubmit={this.handleSubmit}>
 						<Form.Input
 							className='formInput'
-							label='Username:'
+							label='Username'
 							name='username'
 							id='username'
 							type='text'
@@ -45,14 +48,14 @@ class Login extends React.Component {
 						/>
 						<Form.Input
 							className='formInput'
-							label='Password:'
+							label='Password'
 							name='password'
 							id='password'
 							type='password'
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-						<Button className='bigButton' type='submit'> Login
+						<Button type='submit'> Login
 					</Button>
 					</Form>
 				</div>
