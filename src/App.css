@@ -6,9 +6,7 @@
   width: 100%;
   height: 100%;
   background-size: cover;
-
 }
-
 .Container {
   /* border: 1px solid red; */
   background-color: #a2d1f0;
@@ -20,11 +18,9 @@
   box-shadow: inset 3px 9px 25px -1px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
 }
-
 .ui form {
   margin-top: inherit;
 }
-
 .ui input {
      font-size: 15px;
      padding: 10px 10px 10px 40px;
@@ -38,7 +34,6 @@
      box-sizing: border-box;
      margin: 1vh auto
 }
-
 label{
   margin-bottom: 5px;
   font-size: 15px;
@@ -46,7 +41,6 @@ label{
   color: #002a50;
   margin: 3vh auto 1.5vh;
 }
-
 .ui button {
   margin: 2vh auto;
   background-color: #002c8b;
@@ -60,7 +54,6 @@ label{
   cursor: pointer;
   font-size: 15px;
 }
-
 .Landing h1 {
   font-size: 3.7em;
   color: white;
@@ -78,16 +71,13 @@ label{
   height: 100%;
   background-size: cover;
 }
-
 .startButtons {
   display: flex;
   justify-content: space-evenly;
-
   /* padding: 0% 23%; */
   width: 80%;
   margin: auto;
   margin-top: 7%;
-
 }
 .navLink {
   background-color: #26496c; 
@@ -104,12 +94,10 @@ label{
   border-radius: 5px;
   width: 40%
 }
-
 .game-info-container {
   width: 40%;
   border-radius: 5px;
 }
-
 .WelcomeScreen {
   background-color: #002a50; 
   position: fixed;
@@ -118,7 +106,6 @@ label{
   height: 100%;
   background-size: cover;
 }
-
 .WelcomeText {
   width: 40%;
   padding: 1% 4% 2% 4%;
@@ -128,8 +115,6 @@ label{
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
-
-
 }
 .WelcomeButton {
   margin-top: 4%;
@@ -142,15 +127,12 @@ label{
   font-size: 20px;
   border: 2px solid lightslategray;
 }
-
  
 .regContainer {
     padding-top: 6%;
     font-size: 20px;
     
     }
-
-
 .formInput
 input,
 textarea {
@@ -161,17 +143,36 @@ textarea {
   border: 2px solid lightslategray;
   border-radius: 5px;
   background-color:rgba(255, 255, 255, 0.7);
-
 }
-
-
+.formInput
+label {
+  color: lightslategray;
+  font-size: 25px;
+}
+.regContainer
+Button {
+  background-color: lightslategrey; 
+  color: white;
+  font-size: 22px;
+  padding: 10px 50px;
+  
+}
+.regContainer
+h1 {
+  color: lightslategrey;
+  padding-bottom: 1%;
+}
+a {
+  text-decoration: none;
+  color: #002a50;
+  font-weight: bold;
+}
 /************** GAME CSS ************/
 .game-container {
   height: 100vh;
   background-image: url("./images/under-the-sea.jpg");
   background-size: inherit;
 }
-
 .inner-game-container {
   display: flex;
   flex-direction: column;
@@ -180,14 +181,11 @@ textarea {
 .inner-map-and-data-container {
   display: flex;
 }
-
-
 .map-container {
   width: 50%;
   /* background-color: #5DADE2;
   border-radius: 1.5rem; */
 }
-
 .inner-graph-container {
   height: 90%;
   display: flex;
@@ -195,16 +193,13 @@ textarea {
   justify-content: space-between;
   /* object-fit: contain; */
 }
-
 .graph {
   height: 100%;
 }
-
 #graph-id-graph-wrapper {
   /* border: 1px solid red;
   height: 100%; */
 }
-
 svg[style] {
   height: 500px !important;
   width: 500px !important;
@@ -214,7 +209,6 @@ svg[style] {
   box-shadow: outset 3px 9px 25px -1px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
 }
-
 .game-data-container {
   text-align: center;
   background-color: #5DADE2;
@@ -229,7 +223,6 @@ svg[style] {
   box-shadow: inset 3px 9px 25px -1px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85); */
 }
-
 .room-info-container {
   margin: 2%;
   position: inherit;
@@ -244,7 +237,6 @@ svg[style] {
   box-shadow: outset 3px 9px 25px -1px #3329a2;
   border: 5px inset rgba(24, 62, 220, 0.85);
 }
-
 /* .controls-buttons {
   display: flex;
   justify-content: space-between;
@@ -252,7 +244,6 @@ svg[style] {
   width: 95%;
   height: 70%;
 } */
-
 .direction-controls {
   width: 66%;
   height: 70%;
@@ -260,13 +251,11 @@ svg[style] {
   display: flex;
   flex-wrap: wrap;
 }
-
 .direction-box {
   width: 35%;
   height: 30%;
   margin: auto;
 }
-
 .direction-button,
 .direction-button:focus {
   background-color: rgb(0, 44, 139);
@@ -278,13 +267,11 @@ svg[style] {
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   outline: none;
 }
-
 .direction-button:hover {
   background-color: rgb(116, 188, 255);
   color: rgb(0, 44, 139);
   border: 2px solid rgb(0, 44, 139);
 }
-
 .direction-button:active {
   background-color: rgb(0, 132, 255);
 }
