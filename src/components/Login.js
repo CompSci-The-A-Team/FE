@@ -17,7 +17,7 @@ class Login extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault()
-		const endpoint = 'http://the-a-team1.herokuapp.com/api/login/';
+		const endpoint = 'https://the-a-team1.herokuapp.com/api/login/';
 		console.log("login is working")
 	 	axios
 		.post(endpoint, this.state)
