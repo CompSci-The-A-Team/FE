@@ -1000,7 +1000,7 @@ const Map = (props) => {
       if(props.mapData.length > 0) {
        let room = props.mapData.find(room => {
           console.log('room.id', room.id)
-          console.log('gameData.room_id', props.gameData.room_id)
+          console.log('gameData.', props.gameData.room_id)
           return room.id === props.gameData.room_id
         })
         console.log('Current Node', room)
