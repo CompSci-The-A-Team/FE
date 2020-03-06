@@ -985,16 +985,16 @@ const testNodes = [
 
 const Map = (props) => {
     console.log('props in Map', props)
-    // console.log('propsmapdata', props.mapData.room)
 
     const [ graph, setGraph ] = useState({});
-    // const [ curNode, setCurNode ] = useState({});
     const [rectCoords, setRectCoords] = useState({
         height: 0,
         width: 0
       });
     const mapRef = useRef(null);
 
+
+    
     useEffect(() => {
 
       if(props.mapData.length > 0) {
@@ -1003,10 +1003,18 @@ const Map = (props) => {
           console.log('gameData.room_id', props.gameData.room_id)
           return room.id === props.gameData.room_id
         })
-        console.log('setCurrNode', room)
+        console.log('Current Node', room)
       
         
-        // const visited = []
+        // const validNodes = []
+        // props.mapData.forEach(room => {
+        //   const dirs = ['north', 'south', 'east', 'west'];
+        //   dirs.forEach(dir => {
+        //     if (room[dir]) {
+        //       validNodes.push(room[dir])
+        //     }
+        //   })
+        // })
         const nodes = props.mapData
         // console.log('nodes', mapData.id)
 
@@ -1020,26 +1028,48 @@ const Map = (props) => {
         });
 
         const s_links = nodes.filter(node => {
-            if(node.south) {
-                return true
-            } else {
-                return false
-            }
-        }).map(link => ({
-            source: link.id,
-            target: link.south
-        }))
+          if(node.south) {
+              return true
+          } else {
+              return false
+          }
+      }).map(link => ({
+          source: link.id,
+          target: link.south
+      }))
 
         const e_links = nodes.filter(node => {
-            if(node.east) {
-                return true
-            } else {
-                return false
-            }
-        }).map(link => ({
-            source: link.id,
-            target: link.east
-        }))
+          if(node.east) {
+              return true
+          } else {
+              return false
+          }
+      }).map(link => ({
+          source: link.id,
+          target: link.east
+      }))
+
+        const n_links = nodes.filter(node => {
+          if(node.north) {
+              return true
+          } else {
+              return false
+          }
+      }).map(link => ({
+          source: link.id,
+          target: link.north
+      }))
+
+      const w_links = nodes.filter(node => {
+        if(node.west) {
+            return true
+        } else {
+            return false
+        }
+    }).map(link => ({
+        source: link.id,
+        target: link.west
+    }))
 
         // const testGraph = {
         //     nodes: [
@@ -1057,6 +1087,8 @@ const Map = (props) => {
         //     links: [...s_links, ...e_links]
         //   };
 
+        
+
         const newGraph = {
           nodes: [
             ...nodes.map(node => {
@@ -1069,17 +1101,17 @@ const Map = (props) => {
                 size: coords.width / 2,
                 // color: "#2E4053 ",
                 // symbolType: "square",
-                id: node.id
+                id: node.id ? node.id : 'you cannot go that way'
               }
-            })
+            }),
           ],
-          links: [...s_links, ...e_links]
+          links: [...s_links, ...e_links, ...n_links, ...w_links]
         }
       
           setGraph(newGraph);
         }
   
-    }, [props.mapData])
+    }, [props.mapData, props.gameData.room_id])
 
     return(
         <div className='map-container' ref={mapRef}>

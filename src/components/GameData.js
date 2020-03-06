@@ -5,10 +5,10 @@ const GameData = (props) => {
     console.log('player username in gameData', props.gameData.players)
     return (
         <div className='room-info-container'>
-            <h2 style={{color: "red"}} className='welcome-user'>Welcome {props.userData.name}</h2>
-            <h4 style={{color: "red"}}>You are currently in room: {props.gameData.title}</h4>
-            <h4 style={{color: "red"}}>Room Description: {props.gameData.description}</h4>
-            <h4>There is a Fish in this room: his message says to find the twilight zone north</h4>
+            <h2  className='welcome-user'>Welcome {props.userData.name} !</h2>
+            <h4>You are currently in room: <br></br><span style={{color: 'rgb(0, 44, 139)', fontSize:'20px'}}>{props.gameData.title}</span></h4>
+            <h4> <span>{props.gameData.description}</span></h4>
+            <h4>Starfish King says: The sunlight is north</h4>
             <h3>Items in this room:</h3>
             <h4>1 x Magic Shell</h4>
             {/* <h4>Players in this room: </h4> */}
