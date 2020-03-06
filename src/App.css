@@ -165,35 +165,6 @@ textarea {
 }
 
 
-.formInput
-label {
-  color: lightslategray;
-  font-size: 25px;
-}
-
-.regContainer
-Button {
-  background-color: lightslategrey; 
-  color: white;
-  font-size: 22px;
-  padding: 10px 50px;
-  
-}
-
-.regContainer
-h1 {
-  color: lightslategrey;
-  padding-bottom: 1%;
-
-}
-
-a {
-  text-decoration: none;
-  color: #002a50;
-  font-weight: bold;
-}
-
-
 /************** GAME CSS ************/
 .game-container {
   height: 100vh;
