@@ -32,13 +32,15 @@ class Register extends React.Component {
 
   render() {
     return (
+
       <div className='Container'>
         <h2 style={{color: '#002a50'}}>Create Account</h2>
+
           <Form onSubmit={this.handleSubmit}>
             <Form.Field>
-              <Form.Input
+              <Form.Input 
                 className='formInput'
-                label='Username:'
+                label='Username'
                 name='username'
                 id='username'
                 type='text'
@@ -49,7 +51,7 @@ class Register extends React.Component {
             <Form.Field>
               <Form.Input
                 className='formInput'
-                label='Password:'
+                label='Password'
                 name='password1'
                 id='password1'
                 type='password'
@@ -60,7 +62,7 @@ class Register extends React.Component {
             <Form.Field>
               <Form.Input
                 className='formInput'
-                label='Confirm Password:'
+                label='Confirm Password'
                 name='password2'
                 id='password2'
                 type='password'
