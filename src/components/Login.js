@@ -30,12 +30,13 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			<div className='Container'>
+			<div className='regContainer'>
 				<div className='form'>
+				<h1>Sign In</h1>
 					<Form onSubmit={this.handleSubmit}>
 						<Form.Input
 							className='formInput'
-							label='Username:'
+							label='Username'
 							name='username'
 							id='username'
 							type='text'
@@ -44,14 +45,14 @@ class Login extends React.Component {
 						/>
 						<Form.Input
 							className='formInput'
-							label='Password:'
+							label='Password'
 							name='password'
 							id='password'
 							type='password'
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-						<Button className='bigButton' type='submit'> Login
+						<Button type='submit'> Login
 					</Button>
 					</Form>
 				</div>

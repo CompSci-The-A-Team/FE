@@ -61,7 +61,7 @@ svg[style] {
   padding-top: 5%;
   text-align: center;
   
-	
+  
 }
 .background-image {
   background-image: url("./images/ocean.jpg");
@@ -73,8 +73,8 @@ svg[style] {
 
 .startButtons {
   display: flex;
-  justify-content: space-between;
-  padding: 0% 23%;
+  justify-content: space-evenly;
+  padding: 0% 20%;
 }
 .navLink {
   background-color: lightslategrey; 
@@ -127,5 +127,48 @@ color: lightslategray
   display: inline-block;
   font-size: 20px;
   border: 2px solid lightslategray;
+}
+
+ 
+.regContainer {
+    padding-top: 6%;
+    font-size: 20px;
+    
+    }
+
+
+.formInput
+input,
+textarea {
+  margin-bottom: 1.5%;
+  padding: .8%;
+  font-size: 15px;
+  width: 20%;
+  border: 2px solid lightslategray;
+  border-radius: 5px;
+  background-color:rgba(255, 255, 255, 0.7);
+
+}
+
+
+.formInput
+label {
+  color: lightslategray;
+  font-size: 25px;
+}
+
+.regContainer
+Button {
+  background-color: lightslategrey; 
+  color: white;
+  font-size: 22px;
+  padding: 10px 50px;
+  
+}
+
+.regContainer
+h1 {
+  color: lightslategrey;
+  padding-bottom: 1%;
 
 }
