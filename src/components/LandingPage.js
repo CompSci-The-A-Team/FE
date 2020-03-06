@@ -10,7 +10,7 @@ class LandingPage extends React.Component {
     return (
       <div className="background-image">
       <div className="Landing">
-            <h1>Enter The Ocean Game</h1>
+            <h1>The Ocean Game</h1>
           <div className="startButtons">
             <Button>
               <NavLink className="navLink" to="/register">
