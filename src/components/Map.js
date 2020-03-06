@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Graph } from "react-d3-graph";
+import { map } from 'd3';
 
 const myConfig = {
     automaticRearrangeAfterDropNode: true,
@@ -986,86 +987,136 @@ const Map = (props) => {
     console.log('props in Map', props)
 
     const [ graph, setGraph ] = useState({});
-    const [ curNode, setCurNode ] = useState({});
     const [rectCoords, setRectCoords] = useState({
         height: 0,
         width: 0
       });
     const mapRef = useRef(null);
 
-    const handleReload = useCallback(() => {
-        //setCurNode to find room and room id via worldData room data
-        //const visited = []
-        // const nodes = filter rooms if visited -- include it in map
-        // const adjacent - new Set() ????
-        // for each node -- set new Set directions (greyed links)
 
-        // const coords = mapRef.current -- RESEARCH VIEWPORT
-
-        // const adjacentNodes - filter rooms for adjacent rooms
-        // const newGraph
-
-    })
-
-    // a node has an ID, an east, south, x, y, 
-
+    
     useEffect(() => {
+
+      if(props.mapData.length > 0) {
+       let room = props.mapData.find(room => {
+          console.log('room.id', room.id)
+          console.log('gameData.room_id', props.gameData.room_id)
+          return room.id === props.gameData.room_id
+        })
+        console.log('Current Node', room)
+      
+        
+        // const validNodes = []
+        // props.mapData.forEach(room => {
+        //   const dirs = ['north', 'south', 'east', 'west'];
+        //   dirs.forEach(dir => {
+        //     if (room[dir]) {
+        //       validNodes.push(room[dir])
+        //     }
+        //   })
+        // })
+        const nodes = props.mapData
+        // console.log('nodes', mapData.id)
+
 
         const coords = mapRef.current.getBoundingClientRect();
         coords.height *= 0.81;
+        // coords.width *= 0.71;
         setRectCoords({
           height: coords.height,
           width: coords.width
         });
 
-        const s_links = testNodes.filter(node => {
-            if(node.south) {
-                return true
-            } else {
-                return false
-            }
-        }).map(link => ({
-            source: link.id,
-            target: link.south
-        }))
+        const s_links = nodes.filter(node => {
+          if(node.south) {
+              return true
+          } else {
+              return false
+          }
+      }).map(link => ({
+          source: link.id,
+          target: link.south
+      }))
 
-        const e_links = testNodes.filter(node => {
-            if(node.east) {
-                return true
-            } else {
-                return false
-            }
-        }).map(link => ({
-            source: link.id,
-            target: link.east
-        }))
+        const e_links = nodes.filter(node => {
+          if(node.east) {
+              return true
+          } else {
+              return false
+          }
+      }).map(link => ({
+          source: link.id,
+          target: link.east
+      }))
 
-        const testGraph = {
-            nodes: [
-              ...testNodes.map(node => {
-                return {
-                  ...node,
-                  x: node.x * (coords.width / 20) + 0.5 * coords.width,
-                  y: node.y * -(coords.width / 20) + 0.5 * coords.height,
-                  size: coords.width / 2,
-                  color: "#2E4053 ",
-                  symbolType: "square",
-                  id: node.id
-              }})
-            ],
-            links: [...s_links, ...e_links]
-          };
+        const n_links = nodes.filter(node => {
+          if(node.north) {
+              return true
+          } else {
+              return false
+          }
+      }).map(link => ({
+          source: link.id,
+          target: link.north
+      }))
 
-          setGraph(testGraph);
-        // handleReload();
-        // window.addEventListener("resize", handleRefresh);
-        // return () => window.removeEventListener("resize", handleRefresh);
-    }, [])
+      const w_links = nodes.filter(node => {
+        if(node.west) {
+            return true
+        } else {
+            return false
+        }
+    }).map(link => ({
+        source: link.id,
+        target: link.west
+    }))
+
+        // const testGraph = {
+        //     nodes: [
+        //       ...testNodes.map(node => {
+        //         return {
+        //           ...node,
+        //           x: node.x * (coords.width / 20) + 0.5 * coords.width,
+        //           y: node.y * -(coords.width / 20) + 0.5 * coords.height,
+        //           size: coords.width / 2,
+        //           color: "#2E4053 ",
+        //           symbolType: "square",
+        //           id: node.id
+        //       }})
+        //     ],
+        //     links: [...s_links, ...e_links]
+        //   };
+
+        
+
+        const newGraph = {
+          nodes: [
+            ...nodes.map(node => {
+              return {
+                ...node,
+                x: node.x * (coords.width / 20) + 0.5 * coords.width,
+                y: node.y * -(coords.width / 20) + 0.5 * coords.height,
+                color: node.id === props.gameData.room_id ? "#F7DC6F" : "#2E4053",
+                symbolType: node.id === props.gameData.room_id ? "circle" : "square",
+                size: coords.width / 2,
+                // color: "#2E4053 ",
+                // symbolType: "square",
+                id: node.id ? node.id : 'you cannot go that way'
+              }
+            }),
+          ],
+          links: [...s_links, ...e_links, ...n_links, ...w_links]
+        }
+      
+          setGraph(newGraph);
+        }
+  
+    }, [props.mapData, props.gameData.room_id])
 
     return(
         <div className='map-container' ref={mapRef}>
             {graph.nodes && rectCoords.height !== 0 ? (
-                <div className='graph-container'>
+                <div className='inner-graph-container'>
                 <Graph
                     className="graph"
                     id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
